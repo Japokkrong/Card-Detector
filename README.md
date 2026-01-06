@@ -1,4 +1,4 @@
-# 🆔 Card Detection & Face Extraction
+## Card Detection & Face Extraction
 
 This project is a Python script that detects a card from an input image using **Computer Vision** techniques.  
 It performs a **Perspective Transform** to obtain a top-down (bird’s-eye) view of the card and then **extracts the face region** using a predefined mask.
@@ -9,9 +9,9 @@ It performs a **Perspective Transform** to obtain a top-down (bird’s-eye) view
 
 ---
 
-## 🖼️ Example Input & Output
+## Example Input & Output
 
-### 🔹 Input Image (Original Card)
+###  Input Image (Original Card)
 This is the original image provided to the pipeline.  
 The algorithm detects card edges, contours, and corner points from this image.
 
@@ -19,14 +19,14 @@ The algorithm detects card edges, contours, and corner points from this image.
 
 ---
 
-### 🔹 Output Image (Extracted Face)
+###  Output Image (Extracted Face)
 After perspective warping and mask-based extraction, the face region is isolated and cropped.
 
 ![Extracted Face Image](https://drive.google.com/uc?export=view&id=11a_UMvLHt7GTkY9sa2o_JFNWU9cUYe8M)
 
 ---
 
-## 📋 Key Features
+## Key Features
 
 - **Edge Detection**  
   Uses *Gaussian Blur* + *Canny Edge Detection* with *Morphological Closing* to clearly highlight card boundaries.
@@ -42,7 +42,7 @@ After perspective warping and mask-based extraction, the face region is isolated
 
 ---
 
-## 🛠️ Installation
+## Installation
 
 Install the required dependencies:
 
@@ -51,7 +51,7 @@ pip install opencv-python numpy matplotlib
 
 ```
 
-## 📂 File Structure
+## File Structure
 
 Ensure your directory is organized as follows for the script to run correctly:
 
@@ -69,7 +69,7 @@ inputImage = cv2.imread('{ImagePath}.jpg')  # Replace with your image path
 Mask = cv2.imread('{cardPath}.bmp')         # Replace with your mask path
 ```
 
-## 🚀 Pipeline Explanation
+## Pipeline Explanation
 
 The processing pipeline consists of four main steps:
 
@@ -96,7 +96,7 @@ The processing pipeline consists of four main steps:
 * Apply bitwise_and to isolate the face region.
 * Calculate the bounding box of the face and crop the final image (face.jpg).
 
-## 💻 Usage
+## Usage
 
 Run the Python script:
 
