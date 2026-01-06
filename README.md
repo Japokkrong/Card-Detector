@@ -1,24 +1,54 @@
 # 🆔 Card Detection & Face Extraction
 
-This project is a Python script designed to detect a card from an input image using Computer Vision techniques. It performs a **Perspective Transform** to obtain a top-down (bird's-eye) view of the card and subsequently extracts the face region using a specific mask.
+This project is a Python script that detects a card from an input image using **Computer Vision** techniques.  
+It performs a **Perspective Transform** to obtain a top-down (bird’s-eye) view of the card and then **extracts the face region** using a predefined mask.
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
 
+---
+
+## 🖼️ Example Input & Output
+
+### 🔹 Input Image (Original Card)
+This is the original image provided to the pipeline.  
+The algorithm detects card edges, contours, and corner points from this image.
+
+![Original Card Image](https://drive.google.com/uc?export=view&id=1WQAvaQh80WI5o2YsaL5mfwFlJCPLX8LM)
+
+---
+
+### 🔹 Output Image (Extracted Face)
+After perspective warping and mask-based extraction, the face region is isolated and cropped.
+
+![Extracted Face Image](https://drive.google.com/uc?export=view&id=11a_UMvLHt7GTkY9sa2o_JFNWU9cUYe8M)
+
+---
+
 ## 📋 Key Features
 
-* **Edge Detection:** Utilizes Canny Edge Detection combined with Gaussian Blur and Morphological Operations to accurately identify card boundaries.
-* **Contour Processing:** Implements Convex Hull and `approxPolyDP` to locate the four corner points of the card.
-* **Perspective Transform:** Warps the detected card area into a flat, rectangular view based on standard card aspect ratios.
-* **Face Extraction:** apply a bitwise operation with a pre-defined mask to isolate and crop the face from the card.
+- **Edge Detection**  
+  Uses *Gaussian Blur* + *Canny Edge Detection* with *Morphological Closing* to clearly highlight card boundaries.
+
+- **Contour Processing**  
+  Identifies the largest contour, computes its **Convex Hull**, and applies `approxPolyDP` to estimate the four card corners.
+
+- **Perspective Transform**  
+  Warps the detected card into a flat, rectangular, top-down view using homography.
+
+- **Face Extraction**  
+  Applies a predefined mask with `bitwise_and` to isolate and crop the face region.
+
+---
 
 ## 🛠️ Installation
 
-This project requires Python and standard data science/vision libraries. Install the dependencies using pip:
+Install the required dependencies:
 
 ```bash
 pip install opencv-python numpy matplotlib
+
 ```
 
 ## 📂 File Structure
